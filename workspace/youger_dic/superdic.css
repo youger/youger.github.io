@@ -1,0 +1,142 @@
+body {
+	line-height: 103%;
+	margin:0px;
+	padding:0px;
+	font:12px/1.5 "Microsoft YaHei",Arial, Helvetica,sans_serif; word-wrap:break-word;break-word:break-all; color:#484b4e;
+}
+
+p {
+	text-align:center;
+	padding-bottom:20px;
+}
+
+dl {
+	line-height: 140%;
+	padding : 0;
+	margin : 5px;
+}
+
+dd{
+	padding : 0;
+	margin : 0;
+	line-height: 140%;
+}
+
+dt{
+	padding : 0;
+	margin : 0;
+	line-height: 140%;
+}
+
+ul{
+	display: block;
+	list-style:none;
+	margin: 0px 0px 0px 5px;
+	padding: 0px;
+}
+
+div {
+    font-size: 20px;
+}
+
+div.join {
+	float: left;
+}
+
+div.color { background-color: #eeffff }
+
+.word, .pron, .title{
+	margin:15px 12px;
+}
+
+.pron {
+    font-family: IPAKielSeven2;
+    font-size: 16px;
+    display: inline;
+    color: #34bf0c;
+    padding-top:20px;
+}
+
+.title  {
+	height:40px;
+    background:rgb(44,197,94);
+}
+
+.dic-name {
+  position:relative;
+  top:30%;
+	left:1%;
+	color: #FFFFFF;
+	font-size: 18px;
+}
+
+i{
+	float: right;
+	padding-right: 5px
+}
+
+#sound-button {
+    background:url(./icon_sound.png) no-repeat;
+	background-size:24px 24px;
+	background-position:0px 2px;
+	padding:6px 24px 0px 0px;
+	margin:20px;
+}
+
+#word-button {
+	background:url(./icon_words2.png) no-repeat;
+	background-size:24px 28px;
+	float:right;
+	padding:14px 12px;
+}
+
+#more-exp-button {
+    margin:10px;
+    padding:5px 20px;
+    text-align:center;
+    text-decoration:none;
+    -webkit-border-radius:5px;
+    color:#2CC55E;
+    border-color: #2CC55E;
+    border-width: 1px;
+    border-style: solid;
+}
+
+#load-button {
+    text-align:center;
+    text-decoration:none;
+    font-size:16px;
+    text-shadow:1px 1px 1px rgba(255,255,255, .22);
+    -webkit-transition: all 0.15s ease;
+    color:#cacaca;
+    text-decoration: underline;
+}
+
+#more-sentence-button {
+    text-align:center
+    display:inline-block;
+    margin:10px;
+    padding:6px 16px;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:700;
+    text-shadow:1px 1px 1px rgba(255,255,255, .22);
+    -webkit-border-radius:5px;
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0, .29),
+    inset 1px 1px 1px rgba(255,255,255, .44);
+    -webkit-transition: all 0.15s ease;
+    color:#ffffff;
+    background:#c1c1c1;
+}
+
+body.popup {
+    margin:4px 5px;
+    padding:0px;
+	background-color: #727272;
+}
+
+div.popup {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+}

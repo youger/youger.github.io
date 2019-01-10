@@ -1,0 +1,26 @@
+#u0_img {
+    //position:absolute;
+    margin-left: 20px;
+}
+
+#u1_img {
+}
+
+#u2_img {
+}
+
+.iphone_background {
+    float:left;
+    width: 380px;
+    height: 800px;
+    margin: 10px;
+    background-image: url('iphone_background.png');
+}
+
+.u0_content{
+  position:relative;
+  left:30px;
+  top:136px;
+  //-webkit-overflow-scrolling: touch !important;
+  //overflow: auto !important;
+}
