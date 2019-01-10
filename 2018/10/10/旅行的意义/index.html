@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="iOS, refactor, reuse, 重构, 复用">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="原文地址：链接 原文作者：Chris Eidhof 在iOS项目中ViewController经常是最大的文件，而且还包含了很多不必须的代码。不仅如此，在整个项目中ViewController还常常是代码复用最少的部分。接下来我们学习一下为ViewController减重的技巧，提高代码的可重用性，把代码放置更恰当的位置。 ##分离数据源(Data Source)和其他协议(Protocols)">
-<meta name="keywords" content="iOS, refactor, reuse, 重构, 复用">
+<meta name="description" content="环青海湖告一段落，旅途的结束总是充斥着些许的失落，虽然收获满满，但难免会有得到之后的空虚感。 7月或者8月产生环湖的念头，抽十一假期决定践行一下这个念想。十一前半段陪家人在北京看人海，十一后半段骑驴环青海。蓄谋两天安排行程，网上订好自行车，机票，静待时间的到来。有些许的兴奋，毕竟不是人生的第一次独自远行。屁股也体会过什么叫如坐针毡，眼睛也看过大山大河，不会因为有那么多未知感到亢奋。 为什么选择青海">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[译]为视图控制器减重">
-<meta property="og:url" content="http://youger.github.io/2013/11/28/wei-shi-tu-kong-zhi-qi-jian-zhong/index.html">
+<meta property="og:title" content="旅行的意义">
+<meta property="og:url" content="http://youger.github.io/2018/10/10/旅行的意义/index.html">
 <meta property="og:site_name" content="Fser">
-<meta property="og:description" content="原文地址：链接 原文作者：Chris Eidhof 在iOS项目中ViewController经常是最大的文件，而且还包含了很多不必须的代码。不仅如此，在整个项目中ViewController还常常是代码复用最少的部分。接下来我们学习一下为ViewController减重的技巧，提高代码的可重用性，把代码放置更恰当的位置。 ##分离数据源(Data Source)和其他协议(Protocols)">
+<meta property="og:description" content="环青海湖告一段落，旅途的结束总是充斥着些许的失落，虽然收获满满，但难免会有得到之后的空虚感。 7月或者8月产生环湖的念头，抽十一假期决定践行一下这个念想。十一前半段陪家人在北京看人海，十一后半段骑驴环青海。蓄谋两天安排行程，网上订好自行车，机票，静待时间的到来。有些许的兴奋，毕竟不是人生的第一次独自远行。屁股也体会过什么叫如坐针毡，眼睛也看过大山大河，不会因为有那么多未知感到亢奋。 为什么选择青海">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-10T16:08:44.611Z">
+<meta property="og:updated_time" content="2019-01-10T16:46:34.300Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[译]为视图控制器减重">
-<meta name="twitter:description" content="原文地址：链接 原文作者：Chris Eidhof 在iOS项目中ViewController经常是最大的文件，而且还包含了很多不必须的代码。不仅如此，在整个项目中ViewController还常常是代码复用最少的部分。接下来我们学习一下为ViewController减重的技巧，提高代码的可重用性，把代码放置更恰当的位置。 ##分离数据源(Data Source)和其他协议(Protocols)">
+<meta name="twitter:title" content="旅行的意义">
+<meta name="twitter:description" content="环青海湖告一段落，旅途的结束总是充斥着些许的失落，虽然收获满满，但难免会有得到之后的空虚感。 7月或者8月产生环湖的念头，抽十一假期决定践行一下这个念想。十一前半段陪家人在北京看人海，十一后半段骑驴环青海。蓄谋两天安排行程，网上订好自行车，机票，静待时间的到来。有些许的兴奋，毕竟不是人生的第一次独自远行。屁股也体会过什么叫如坐针毡，眼睛也看过大山大河，不会因为有那么多未知感到亢奋。 为什么选择青海">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://youger.github.io/2013/11/28/wei-shi-tu-kong-zhi-qi-jian-zhong/">
+  <link rel="canonical" href="http://youger.github.io/2018/10/10/旅行的意义/">
 
 
 
 
 
-  <title>[译]为视图控制器减重 | Fser</title>
+  <title>旅行的意义 | Fser</title>
   
 
 
@@ -263,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://youger.github.io/2013/11/28/wei-shi-tu-kong-zhi-qi-jian-zhong/">
+    <link itemprop="mainEntityOfPage" href="http://youger.github.io/2018/10/10/旅行的意义/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="youger">
@@ -280,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[译]为视图控制器减重</h1>
+          <h1 class="post-title" itemprop="name headline">旅行的意义</h1>
         
 
         <div class="post-meta">
@@ -292,8 +291,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-11-28T12:10:00+08:00">
-                2013-11-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-10T00:00:00+08:00">
+                2018-10-10
               </time>
             
 
@@ -315,8 +314,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/翻译/" itemprop="url" rel="index">
-                    <span itemprop="name">翻译</span>
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
                   </a>
                 </span>
 
@@ -352,19 +351,14 @@
       
 
       
-        <p>原文地址：<a href="http://www.objc.io/issue-1/lighter-view-controllers.html" target="_blank" rel="noopener">链接</a></p>
-<p>原文作者：<a href="http://twitter.com/chriseidhof" target="_blank" rel="noopener">Chris Eidhof</a></p>
-<p>在iOS项目中ViewController经常是最大的文件，而且还包含了很多不必须的代码。不仅如此，在整个项目中ViewController还常常是代码复用最少的部分。接下来我们学习一下为ViewController减重的技巧，提高代码的可重用性，把代码放置更恰当的位置。</p>
-<p>##分离数据源(Data Source)和其他协议(Protocols)</p>
-<p>把UITableViewDataSource部分从你的代码中挪到它自己的类里。假如你不止一次的这样做，你将开始接触设计模式和为此创建可复用的类。</p>
-<p>例如，在我们的<a href="https://github.com/objcio/issue-1-lighter-view-controllers" target="_blank" rel="noopener">例子</a>中PhotosViewController类有下面的方法：</p>
-<figure class="highlight objc"><figcaption><span>title:PotosViewController.m</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#pragma mark Pragma</span></span><br><span class="line"></span><br><span class="line">- (Photo*)photoAtIndexPath:(<span class="built_in">NSIndexPath</span>*)indexPath &#123;</span><br><span class="line">    <span class="keyword">return</span> photos[(<span class="built_in">NSUInteger</span>)indexPath.row];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">NSInteger</span>)tableView:(<span class="built_in">UITableView</span>*)tableView</span><br><span class="line"> numberOfRowsInSection:(<span class="built_in">NSInteger</span>)section &#123;</span><br><span class="line">    <span class="keyword">return</span> photos.count;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">UITableViewCell</span>*)tableView:(<span class="built_in">UITableView</span>*)tableView</span><br><span class="line">        cellForRowAtIndexPath:(<span class="built_in">NSIndexPath</span>*)indexPath &#123;</span><br><span class="line">    PhotoCell* cell = [tableView dequeueReusableCellWithIdentifier:PhotoCellIdentifier</span><br><span class="line">                                                      forIndexPath:indexPath];</span><br><span class="line">    Photo* photo = [<span class="keyword">self</span> photoAtIndexPath:indexPath];</span><br><span class="line">    cell.label.text = photo.name;</span><br><span class="line">    <span class="keyword">return</span> cell;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这些代码中许多都和数组有关，其中一些提供ViewController管理的照片。那么让我们试一下把和数组相关的代码挪到它自己的类中。我们通过块(block)来配置cell(也可以通过委托(delegate)来设置，取决于你自己的情况和偏好)。</p>
-<figure class="highlight objc"><figcaption><span>title:ArrayDataSource.m</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ArrayDataSource</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)itemAtIndexPath:(<span class="built_in">NSIndexPath</span>*)indexPath &#123;</span><br><span class="line">    <span class="keyword">return</span> items[(<span class="built_in">NSUInteger</span>)indexPath.row];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">NSInteger</span>)tableView:(<span class="built_in">UITableView</span>*)tableView</span><br><span class="line"> numberOfRowsInSection:(<span class="built_in">NSInteger</span>)section &#123;</span><br><span class="line">    <span class="keyword">return</span> items.count;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">UITableViewCell</span>*)tableView:(<span class="built_in">UITableView</span>*)tableView</span><br><span class="line">        cellForRowAtIndexPath:(<span class="built_in">NSIndexPath</span>*)indexPath &#123;</span><br><span class="line">    <span class="keyword">id</span> cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier</span><br><span class="line">                                              forIndexPath:indexPath];</span><br><span class="line">    <span class="keyword">id</span> item = [<span class="keyword">self</span> itemAtIndexPath:indexPath];</span><br><span class="line">    configureCellBlock(cell,item);</span><br><span class="line">    <span class="keyword">return</span> cell;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
-<p>你可以创建这个对象的实例，把它作为表格视图的数据源来取代在你ViewController的那三个方法</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> (^configureCell)(PhotoCell*, Photo*) = ^(PhotoCell* cell, Photo* photo) &#123;</span><br><span class="line">   cell.label.text = photo.name;</span><br><span class="line">&#125;;</span><br><span class="line">photosArrayDataSource = [[ArrayDataSource alloc] initWithItems:photos</span><br><span class="line">                                                cellIdentifier:PhotoCellIdentifier</span><br><span class="line">                                            configureCellBlock:configureCell];</span><br><span class="line"><span class="keyword">self</span>.tableView.dataSource = photosArrayDataSource;</span><br></pre></td></tr></table></figure>
-<p>现在你不用在考虑筹划索引路径(index path)在数组中的位置，每次你想要在表视图中展示一个数组的内容你都可以重用这部分代码。你还可以额外实现像<code>tableView:commitEditingStyle:forRowAtIndexPath:</code>这样的方法，在你的ViewController中共用这些代码。</p>
-<p>美妙的是你可以单独的测试这个类而不用考虑重新在写。假如数据不是数组这个方法同样适用。</p>
+        <p>环青海湖告一段落，旅途的结束总是充斥着些许的失落，虽然收获满满，但难免会有得到之后的空虚感。</p>
+<p>7月或者8月产生环湖的念头，抽十一假期决定践行一下这个念想。十一前半段陪家人在北京看人海，十一后半段骑驴环青海。蓄谋两天安排行程，网上订好自行车，机票，静待时间的到来。有些许的兴奋，毕竟不是人生的第一次独自远行。屁股也体会过什么叫如坐针毡，眼睛也看过大山大河，不会因为有那么多未知感到亢奋。</p>
+<p>为什么选择青海湖？鬼知道。就像这次经历，如果不写下来，几年后再回忆就是一团浆糊，就像梦一样，醒了就忘了。7，8月产生的念头现在连根毛都记不得，可能是网上看到一张图片，可能是和别人随口说的一句玩笑话，现在再去细究只剩下一堆可能。为什么十一去呢？十一是小长假啊，也是青海湖游玩的淡季，大部分人应该不会喜欢去这片“荒凉”的地方，大部分人不会去所以就去咯。</p>
+<p>4号晚上抵达曹家堡，到西宁住一晚。一进酒店大门就闻到浓浓的烤羊肉味，瞬间胃就起反应了。5号上午搭乘大巴赶往西海镇，到了已经是中午了。太阳虽然很毒，一下车还是感到一丝凉意，在西宁还觉得衣服带多了，到这儿才知道带的衣服刚刚好。接下来联系租车行去试车子，老板还挺热情，客套一顿，说就等我了，要不今天等路上那批回来就关门了。这边做生意的基本都是外地人，当地人基本不做生意，所以过了旺季基本就关门过逍遥日子去了。然后就是问老板住和吃的地方。老板带我去了隔壁那家美利达租车行，然后介绍我去他家住。美利达老板姓闫，长得高高瘦瘦，一身运动装，是个四十上下的中年汉子。拿着行李和老闫去他家看住宿的地方，可能是我蹩脚的普通话发音暴漏了我的家乡，路上老闫问我哪里人，我说邢台，老闫突然一句，“邢台啊”（一口纯正邢台地区发音），一下子老乡见老乡的热泪盈眶场景从脑海涌现出来。通过我们原声原味的乡音扫除了陌生人之间的矜持和距离。在老闫家喝了会儿茶，唠了唠嗑，得知老闫还是个骑行达人，有自己车队，还经常参加很多比赛并且取得不错的成绩。前几个月还参加越野赛摔折一根肋骨，人到这个岁数还能有这份激情，敬佩之心油然而生。本来约着下午一起去骑一圈，结果老闫店里有点事只好自己去溜溜新的坐骑，毕竟后面几天要一起相伴上路的，先相互熟悉一下，下面也好有个照应。</p>
+<p>出了镇子，眼前辽阔的大地一下激活了波澜不惊的小心脏。蓝天，白云，黄山，沙丘，雪山。随处可见的牛，马，羊，好像见惯了像我这种没见过世面的游客，连头都懒得抬，漫布在苍茫的天地之间，安逸的荒废着大好时光。突然有一瞬间想变成这里的一只牲口，直到晚上吃了一大盘儿肥美鲜嫩的羊排，才改变之前愚蠢的想法。第一天的小试牛刀，使我对后面的行程充满了期待。本来以为晚上只有我自己，到晚上陆续来了一批刚骑完的人，晚上和刚独自环骑完的小陈一起吃了一顿羊排，小陈是个一个不安分的少年，虽然差着几岁，或许我们身上有一些共同点，边吃边聊着个自的生活工作，度过了一个愉快的夜晚。</p>
+<p>这边昼夜温差比较大，日落时间要比北京时间晚上一两个小时，所以骑行尽量都赶在太阳当空照的时候。6号早早就醒了，但还是等到8点才起，到9点收拾好行装。买了俩个面包两包奶，早饭吃一半，剩下的留着路上饿的时候吃，出发已经是9点半。早起的气温足以使空气凝结成雪花，那边艳阳高照，这边还哈哧哈哧的在冰晶中爬坡，湿润的空气加上空旷的山野使人心旷神怡，消除了爬坡带来的疲惫感。眼前的随处可见现实版的桌面背景，四个眼睛已经不够用，恨不得浑身是眼，360度记录经过的每幅画面。出来玩最大的乐趣就是，美景永远在后面，你永远不知道后面等待你的景象是多震撼人心。翻过二十几公里的山丘，一大片金黄色草原映入眼帘，天色也完全放晴，一条笔直的公路直通湖边。远处若隐若现湖面粼粼的波光，沿着像水流一样的公路一路滑行至湖边。穿越湖边金色的草地，一片沙丘浮现在眼前，干净细软的沙丘勾住了想要赶路的人儿，放下驴，连滚带爬的去沙堆里戏耍一番。继续翻过几个坡，可以看到远方的雪山在云里呼唤你，“放驴过来吧，远方的人儿，别看我们咫尺之遥，到我跟前你还得哈哧多半天。”或许这就是骑行的乐趣，美景就在眼前，你却只能远观不可亵玩。迎着雪山，沿着蜿蜒曲折的湖边公路一圈一圈的行进。路过几个镇子，没有一点饥饿感，也没做停留，继续贪婪的汲取大自然取之不尽的景色。到下午2、3点路过一片晚秋的油菜花，左手边连绵的雪山，右手边碧绿的湖泊，背阴处小风带来丝丝凉意，路边顽皮的藏民小孩看到孤独的行者经过，朝这边大喊，“帅哥，加油”，瞬间一股暖流流经全身。此情此景，不做停留都觉得浪费。把车子停在路边，背靠雪山，面朝大海，啃完备用的面包。后面有一大段漫长的平缓路段，一个面包的热量很快就消耗殆尽，在暖暖的阳光下匀速的行进，渐渐产生了困意，无意间瞅一下心率，飙升到200，打个激灵吓得赶紧停下车子稍作歇息。等心率降下去后，肚子产生了强烈的饥饿感，看到路边的牛羊开始产生幻想，满眼香喷喷牛肉羊肉。在距离下个镇子还有十几公里的地方实在饿的不想动了，正好这里路边很多卖虫草酸奶的藏民，在路边买了一碗酸奶喝，瞬间能量爆棚。一口气在太阳落山前杀到黑马河。</p>
+<p>成也酸奶吐也酸奶。晚上开始阵阵的呕吐感，满嘴的酸奶味。晚饭不能不吃，要不晚上肯定会饿的睡不着。强忍着反胃，吃了一碗牛肉面，一盘烤串。第二天也是早早就醒了，起来准备去盐湖耍一圈，淡季唯一的不好就是去景区成本需要独自承担。最大不好就是，承担了成本还得不到预想的美景。去完盐湖更加确定了我对景区的偏见，网上那些照片是真照骗。回来已是下午2点，吃完饭出发已是3点，不过还好今天行程也不算远，在终点遇到了独自骑行的华哥，一起搭伴找了个宾馆。天色尚早，于是和华哥一起去后面山上的沙陀寺感受一下藏传佛教文化。寺中播放的诵经曲飘荡在辽阔的大地上空，布哈河在夕阳余晖中缓缓汇入青海湖。</p>
+<p>第三天空气有点凝重，太阳好像有点偷懒了，突然感觉进入了冬天。只好在外面加层衣物，抵挡一下提前到来的寒意。和华哥一起出发，配速上的不同我们约好在下一站碰头，于是分开各自行进。没有大太阳的湖边是另一番风景，前面晴空万里，眼下却阴云密布。湖边已经开始结冰，可能是风景没有那边那么漂亮，这边路上基本碰不到什么行人了，连车几乎都很少经过。这不就是最大乐趣了，广阔天地任我行。</p>
 
       
     </div>
@@ -380,14 +374,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/iOS/" rel="tag"># iOS</a>
-          
-            <a href="/tags/refactor/" rel="tag"># refactor</a>
-          
-        </div>
-      
 
       
       
@@ -397,14 +383,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2014/07/15/c-consthe-staticguan-jian-ci/" rel="next" title="C:const和static关键词">
+                <i class="fa fa-chevron-left"></i> C:const和static关键词
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/06/20/octopress-tian-jia-zhong-wen-category/" rel="prev" title="为Octopress添加Category">
-                为Octopress添加Category <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/11/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
